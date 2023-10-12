@@ -1,0 +1,20 @@
+# fly.toml app configuration file generated for gfoxlogistics on 2023-10-06T11:34:45+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "gfoxlogistics"
+primary_region = "jnb"
+
+[env]
+  PORT = "3000"
+  app = "gfoxlogisticsapp"
+  primary_region = "jnb"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
